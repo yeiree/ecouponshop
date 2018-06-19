@@ -22,7 +22,8 @@ public class Item implements Serializable {
     private String itemName;
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "category")
+    @ManyToOne(targetEntity = Category.class, fetch = FetchType.EAGER)
+    @JoinColumn(name="category_id")
     private Category category;
 
     @CreatedDate

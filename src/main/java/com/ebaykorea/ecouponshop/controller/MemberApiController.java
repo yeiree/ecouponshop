@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RestController
 @RequestMapping("/api/member")
 public class MemberApiController {
-    @Autowired
-    MemberService memberService;
+
 
     @GetMapping(path = "/test")
     public String test() {
