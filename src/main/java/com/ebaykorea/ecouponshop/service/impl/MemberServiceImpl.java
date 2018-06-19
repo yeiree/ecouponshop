@@ -13,8 +13,7 @@ public class MemberServiceImpl implements MemberService {
     MemberRepository memberRepository;
 
     @Override
-    @Transactional(readOnly = true)
     public Member getMember(Long id) {
-        return memberRepository.getOne(id);
+        return null;
     }
 }

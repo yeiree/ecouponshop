@@ -19,14 +19,12 @@ public class Order implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JsonBackReference
-    @ManyToOne(targetEntity = Member.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "buyer_id")
+    @ManyToOne(targetEntity = Member.class, fetch = FetchType.EAGER)
+    @JoinColumn(name="buyer_id")
     private Member buyer;
 
-    @JsonBackReference
-    @ManyToOne(targetEntity = OrderItem.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "order_item_no")
+    @OneToOne
+    @JoinColumn(name = "order_item_id")
     private OrderItem orderItem;
 
     private String phoneNumber;

@@ -19,13 +19,11 @@ public class Cart implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JsonManagedReference
-    @ManyToOne(targetEntity = Member.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
+    @ManyToOne(targetEntity = Member.class, fetch = FetchType.EAGER)
+    @JoinColumn(name="buyer_id")
     private Member buyer;
 
-    @JsonManagedReference
-    @ManyToOne(targetEntity = Item.class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = Item.class, fetch = FetchType.EAGER)
     @JoinColumn(name = "item_id")
     private Item item;
 
