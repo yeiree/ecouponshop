@@ -20,8 +20,12 @@ public class OrderItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
+    @Column(name="item_id")
     private Long itemId;
 
+
+    @Column(name="item_name")
     private String itemName;
 
     // 이렇게 넣으면... Order Category도 넣어야한다..
@@ -29,8 +33,10 @@ public class OrderItem {
     // private Category category;
 
     @CreatedDate
+    @Column(name="reg_date")
     private LocalDateTime registerDate;
 
     @LastModifiedDate
+    @Column(name="mod_date")
     private LocalDateTime modifyDate;
 }

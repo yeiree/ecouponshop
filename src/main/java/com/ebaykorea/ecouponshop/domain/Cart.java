@@ -28,8 +28,10 @@ public class Cart implements Serializable {
     private Item item;
 
     @CreatedDate
+    @Column(name="reg_date")
     private LocalDateTime registerDate;
 
     @LastModifiedDate
+    @Column(name="mod_date")
     private LocalDateTime modifyDate;
 }
