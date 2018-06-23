@@ -10,21 +10,26 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "category")
+@Table(name="category")
 @Setter
 @Getter
 public class Category implements Serializable {
-    @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String categoryCode;
+    @Id
+    @Column(name="code")
+    private String code;
 
+    @Column(name="category_name")
     private String categoryName;
 
     @CreatedDate
+    @Column(name="reg_date")
     private LocalDateTime registerDate;
 
     @LastModifiedDate
+    @Column(name="mod_date")
     private LocalDateTime modifyDate;
 }

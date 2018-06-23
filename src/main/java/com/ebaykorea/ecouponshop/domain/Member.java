@@ -10,7 +10,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "member")
+@Table(name="member")
 @Setter
 @Getter
 public class Member implements Serializable {
@@ -18,13 +18,16 @@ public class Member implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name="login_id")
     private String loginId;
 
     private String password;
 
     @CreatedDate
+    @Column(name="reg_date")
     private LocalDateTime registerDate;
 
     @LastModifiedDate
+    @Column(name="mod_date")
     private LocalDateTime modifyDate;
 }

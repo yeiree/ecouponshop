@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "order")
+@Table(name="order")
 @Setter
 @Getter
 public class Order implements Serializable {
@@ -24,14 +24,16 @@ public class Order implements Serializable {
     private Member buyer;
 
     @OneToOne
-    @JoinColumn(name = "order_item_id")
+    @JoinColumn(name ="order_item_id")
     private OrderItem orderItem;
 
     private String phoneNumber;
 
     @CreatedDate
+    @Column(name="reg_date")
     private LocalDateTime registerDate;
 
     @LastModifiedDate
+    @Column(name="mod_date")
     private LocalDateTime modifyDate;
 }

@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "item")
+@Table(name="item")
 @Setter
 @Getter
 public class Item implements Serializable {
@@ -19,6 +19,7 @@ public class Item implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name="item_name")
     private String itemName;
 
     @JsonManagedReference
@@ -26,9 +27,13 @@ public class Item implements Serializable {
     @JoinColumn(name="category_id")
     private Category category;
 
+    private double price;
+
     @CreatedDate
+    @Column(name="reg_date")
     private LocalDateTime registerDate;
 
     @LastModifiedDate
+    @Column(name="mod_date")
     private LocalDateTime modifyDate;
 }

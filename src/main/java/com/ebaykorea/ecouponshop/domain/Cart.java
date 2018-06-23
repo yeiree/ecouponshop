@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "cart")
+@Table(name="cart")
 @Setter
 @Getter
 public class Cart implements Serializable {
