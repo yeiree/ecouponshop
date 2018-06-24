@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Item List</title>
 </head>
 <body>
-
+<table border="1">
+    <tr>
+        <td>
+            <img src="http://gdimg.gmarket.co.kr/464845264/still/280?ver=0" width="340" height="300">
+        </td>
+        <td>
+            <table border="1" style="height: 300px; width: 400px;">
+                <tr align="center">
+                    <td>브랜드</td>
+                    <td>Starbucks</td>
+                </tr>
+                <tr align="center">
+                    <td>상품명</td>
+                    <td>아메리카노</td>
+                </tr>
+                <tr align="center">
+                    <td>가격</td>
+                    <td>4500</td>
+                </tr>
+                <tr align="center">
+                    <td colspan="2">
+                        <form name="form1" method="post" action="">
+                            <input type="hidden" name="productId" value="1111">
+                            <select name="amount">
+                                <c:forEach begin="1" end="10" var="i">
+                                    <option value="${i}">${i}</option>
+                                </c:forEach>
+                            </select>&nbsp;개
+                            <input type="submit" value="장바구니에 담기">
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
