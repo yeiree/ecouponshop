@@ -31,9 +31,9 @@ public class Order implements Serializable {
 
     @CreatedDate
     @Column(name="reg_date")
-    private LocalDateTime registerDate;
+    private LocalDateTime regdate;
 
     @LastModifiedDate
     @Column(name="mod_date")
-    private LocalDateTime modifyDate;
+    private LocalDateTime moddate;
 }

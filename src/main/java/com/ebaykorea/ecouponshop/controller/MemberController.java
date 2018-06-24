@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.time.LocalDateTime;
 
 @Controller
-@RequestMapping("/member")
+@RequestMapping("/members")
 public class MemberController {
     @Autowired
     MemberService memberService;
@@ -24,7 +24,7 @@ public class MemberController {
 
     @PostMapping("/join")
     public String join(@ModelAttribute Member member){
-        member.setRegDate(LocalDateTime.now());
+        member.setRegdate(LocalDateTime.now());
 
         PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
         String encode = passwordEncoder.encode(member.getPassword());

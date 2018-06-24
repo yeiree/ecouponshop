@@ -1,6 +1,7 @@
 package com.ebaykorea.ecouponshop.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -18,6 +19,16 @@ public class WebApplicationSecurity extends WebSecurityConfigurerAdapter {
     {
         http.authorizeRequests()
                   .antMatchers("/admin/**").hasRole("ADMIN")
-                  .antMatchers("/**").permitAll();
+                  .antMatchers("/").permitAll()
+                  .antMatchers("/members/joinform").permitAll()
+                  .antMatchers(HttpMethod.POST,"/members/join").permitAll()
+                  .antMatchers("/members/welcome").permitAll()
+                  .antMatchers("/members/login").permitAll()
+                  .antMatchers("/members/**").hasRole("USER")
+                  .antMatchers("/h2-console/**").permitAll()
+                  .anyRequest().fullyAuthenticated()
+                  .and()
+                  .csrf().ignoringAntMatchers("/**")
+                  .ignoringAntMatchers("h2-console/**");
     }
 }
