@@ -1,5 +1,5 @@
-insert into member(id, login_id, password, reg_date, mod_date)
-values( null, 'yeirpark', '1234', now(), now());
+insert into member(id, login_id, password, name, reg_date, mod_date)
+values( null, 'yeirpark', '1234', '박예리',now(), now());
 
 insert into category(id, code, category_name, reg_date, mod_date)
 values( null, '10001', 'starbucks', now(), now());

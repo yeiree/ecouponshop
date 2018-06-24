@@ -23,11 +23,15 @@ public class Member implements Serializable {
 
     private String password;
 
+    private String name;
+
     @CreatedDate
     @Column(name="reg_date")
-    private LocalDateTime registerDate;
+    private LocalDateTime regdate;
 
     @LastModifiedDate
     @Column(name="mod_date")
-    private LocalDateTime modifyDate;
+    private LocalDateTime moddate;
+
+
 }
